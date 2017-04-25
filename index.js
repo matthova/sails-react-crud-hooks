@@ -72,7 +72,9 @@ module.exports = function addCrud(modelName, context) {
       context.setState(newStateObject);
     });
 
-    originalComponentWillMount.apply(context, arguments);
+    if (originalComponentWillMount) {
+      originalComponentWillMount.apply(context, arguments);
+    }
   }
   context.state[pluralize(modelName)] = [];
 }
