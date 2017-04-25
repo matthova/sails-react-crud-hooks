@@ -1,6 +1,6 @@
 {
   "name": "sails-react-crud-hooks",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A simple way to add crud hooks to any sails model",
   "main": "./dist/index.js",
   "scripts": {
