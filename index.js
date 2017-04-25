@@ -1,4 +1,5 @@
 const capitalize = require('lodash').capitalize;
+const pluralize = require('pluralize');
 
 module.exports = function addCrud(modelName, context) {
   context[`create${capitalize(modelName)}`] = function(inModelObject) {

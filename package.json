@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/matthova/sails-react-crud-hooks#readme",
   "dependencies": {
-    "lodash": "^4.17.4"
+    "lodash": "^4.17.4",
+    "pluralize": "^4.0.0"
   }
 }
