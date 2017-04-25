@@ -1,0 +1,27 @@
+{
+  "name": "sails-react-crud-hooks",
+  "version": "0.0.1",
+  "description": "A simple way to add crud hooks to any sails model",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matthova/sails-react-crud-hooks.git"
+  },
+  "keywords": [
+    "sails",
+    "react",
+    "crud"
+  ],
+  "author": "Matt Hova",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/matthova/sails-react-crud-hooks/issues"
+  },
+  "homepage": "https://github.com/matthova/sails-react-crud-hooks#readme",
+  "dependencies": {
+    "lodash": "^4.17.4"
+  }
+}
