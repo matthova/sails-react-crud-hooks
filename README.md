@@ -19,44 +19,46 @@ Here's an example of a 'todo' app where the 'todo' asset is inserted at the App 
 
 
 ```javascript
-  import React, { Component } from 'react';
-  import socketIOClient from 'socket.io-client';
-  import sailsIOClient from 'sails.io.js';
-  import * as addCrud from 'sails-react-crud-hooks';
+import React, { Component } from 'react';
+import socketIOClient from 'socket.io-client';
+import sailsIOClient from 'sails.io.js';
+import addCrud from 'sails-react-crud-hooks';
+import autoBind from 'react-autobind';
 
-  import Todos from './components/Todos';
+import Todos from './components/Todos';
 
-  import './styles/App.css';
+import './styles/App.css';
 
-  class App extends Component {
-    constructor() {
-      super();
+class App extends Component {
+  constructor() {
+    super();
 
-      const io = sailsIOClient(socketIOClient);
-      io.sails.url = 'http://localhost:1337';
+    const io = sailsIOClient(socketIOClient);
+    io.sails.url = 'http://localhost:1337';
 
-      this.state = {
-        io,
-      };
+    this.state = {
+      io,
+    };
 
-      addCrud('todo', this);
-    }
-
-    render() {
-      return (
-        <div className="App">
-          <Todos
-            io={this.state.io}
-            todos={this.state.todos}
-            createTodo={this.createTodo}
-            updateTodo={this.updateTodo}
-            destroyTodo={this.destroyTodo}
-          />
-        </div>
-      );
-    }
+    addCrud('todo', this);
+    autoBind(this);
   }
 
-  export default App;
+  render() {
+    return (
+      <div className="App">
+        <Todos
+          io={this.state.io}
+          todos={this.state.todos}
+          createTodo={this.createTodo}
+          updateTodo={this.updateTodo}
+          destroyTodo={this.destroyTodo}
+        />
+      </div>
+    );
+  }
+}
+
+export default App;
 ```
 
