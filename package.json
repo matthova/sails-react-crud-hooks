@@ -2,9 +2,11 @@
   "name": "sails-react-crud-hooks",
   "version": "0.0.1",
   "description": "A simple way to add crud hooks to any sails model",
-  "main": "index.js",
+  "main": "./dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel src --presets babel-preset-es2015 --out-dir dist",
+    "prepublish": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -24,5 +26,9 @@
   "dependencies": {
     "lodash": "^4.17.4",
     "pluralize": "^4.0.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-preset-es2015": "^6.24.1"
   }
 }
